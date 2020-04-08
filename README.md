@@ -104,6 +104,10 @@
   ### Misc
     # nano /etc/pacman.conf
     uncomment multilib section
+    # pacman -S git xdg-user-dirs
+    # git clone https://aur.archlinux.org/yay.git
+    # cd yay
+    # makepkg -si
     
 # Reboot
   ```
@@ -111,3 +115,12 @@
   # umount -R /mnt
   # reboot
   ```
+
+# Setup New System
+  run setup.sh
+  ```
+  $ sudo systemctl enable lightdm.service
+  $ mkdir -p ~/.config/openbox
+  $ cp -a /etc/xdg/openbox/. ~/.config/openbox/
+  
+  
