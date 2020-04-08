@@ -46,21 +46,24 @@
   
 ## Install Essential Packages
 
-  `# pacstrap /mnt base linux linux-firmware networkmanager nano man info`
+  ` # pacstrap /mnt base linux linux-firmware networkmanager nano man info `
   
 ## Configure The System
 
   ### Fstab
-    `#genfstab -U /mnt >> /mnt/etc/fstab`
+  
+    ` # genfstab -U /mnt >> /mnt/etc/fstab `
     
   ### Chroot
-    `# arch-chroot /mnt`
+    
+    ` # arch-chroot /mnt `
     
   ### Time Zone
-    `# ln -sf /usr/share/zoneinfo/ETC /etc/localtime` need to double check this
-    `# hwclock --systohc`
+  
+    ` # ln -sf /usr/share/zoneinfo/ETC /etc/localtime ` need to double check this
+    ` # hwclock --systohc `
     
   ### Localization
-    `# nano /etc/locale.gen`
+    ` # nano /etc/locale.gen `
     uncomment 
     
