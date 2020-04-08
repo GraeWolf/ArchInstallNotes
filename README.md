@@ -97,6 +97,13 @@
     
   ### Setup User
     # useradd -m -G wheel -s /bin/bash graewolf
+    # pacman -S sudo
+    # EDITOR=nano visudo
+    # visudo
+    
+  ### Misc
+    # nano /etc/pacman.conf
+    uncomment multilib section
     
 # Reboot
   ```
