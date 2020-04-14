@@ -2,25 +2,10 @@
 
 ## Connect to the Internet
 
-  `# iplink set wlp2s0 up`
-
-  First try NetworkManager
-
-  `# pacman -S networkmanager`
-
-  Try:
-
-  `# nmtui`
-
-  If that doesn't work try:
-
-  `# nmcli device wifi connect Starfleet password sfPass`
-
-  Check to see if iwd is installed. If not then do:
-
   `# pacman -S iwd`
 
-  `# iwctl --passphrase sfPass station wlp2s0 connect Starfleet`
+  `# iwctl --passphrase sfPass station wlan0 connect Starfleet`
+  `# dhcpcd`
   
 ## Update the system clock
 
@@ -46,7 +31,7 @@
   
 ## Install Essential Packages
   
-  `# pacstrap /mnt base linux linux-firmware networkmanager nano man info`
+  `# pacstrap /mnt base base-devel linux linux-firmware networkmanager nano man `
   
   
 ## Configure The System
@@ -85,7 +70,9 @@
     ::1           localhost
     127.0.0.1     beowulf.localdomain  beowulf
     
-    # pacman -S network-manager-applet
+    # pacman -S networkmanager
+    # systemctl enable NetworManager.service
+    # systemctl start NetworkManager.service
     
   ### Set Root Password
     # passwd
@@ -97,17 +84,16 @@
     
   ### Setup User
     # useradd -m -G wheel -s /bin/bash graewolf
+    # passwd username
     # pacman -S sudo
     # EDITOR=nano visudo
-    # visudo
     
   ### Misc
     # nano /etc/pacman.conf
     uncomment multilib section
+    # pacman -Syu
     # pacman -S git xdg-user-dirs
-    # git clone https://aur.archlinux.org/yay.git
-    # cd yay
-    # makepkg -si
+    
     
 # Reboot
   ```
@@ -119,6 +105,9 @@
 # Setup New System
   run setup.sh
   ```
+  $ git clone https://aur.archlinux.org/yay.git
+  $ cd yay
+  $ makepkg -si
   $ sudo systemctl enable lightdm.service
   $ mkdir -p ~/.config/openbox
   $ cp -a /etc/xdg/openbox/. ~/.config/openbox/
