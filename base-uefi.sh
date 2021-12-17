@@ -31,7 +31,8 @@ systemctl enable firewalld
 systemctl enable acpid
 
 useradd -m kmccuddy
-echo kmccuddy:password | chpasswd
+read -sp 'Password: ' passvar
+echo kmccuddy:$passvar | chpasswd
 usermod -aG wheel,libvirt -s /bin/bash kmccuddy
 
 #echo "kmccuddy ALL=(ALL) ALL" >> /etc/sudoers.d/kmccuddy
