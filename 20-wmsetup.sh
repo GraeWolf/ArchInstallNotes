@@ -54,6 +54,7 @@ dmenu
 dunst
 feh
 polybar
+network-manager-applet
 nerd-fonts-source-code-pro
 volumeicon
 picom
