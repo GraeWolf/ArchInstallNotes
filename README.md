@@ -63,36 +63,37 @@ Create mount point and mount efi partition
     # nano /etc/pacman.conf
     uncomment multilib section
     # pacman -Syu
-    # pacman -S git xdg-user-dirs
-
+    
   ### Systemd boot
 
   Will need to add the video driver to /etc/mkinitcpio.conf
     MODULES=(nvidia)
 
   Then run command:
-    # mkinitcpio -p linux
+    `# mkinitcpio -p linux`
 
   Then run command:
+    ```
     # bootctl install
     # cd /boot/loader/
-
+    ```
   Edit loader.conf
     timeout 5
     console-mode max
     default arch.conf
-
-    #cd /boot/loader/entries
+  
+    `#cd /boot/loader/entries`
 
   Create arch.conf file
-    # nano arch.conf
+   ```
+   # nano arch.conf
 
       title GraeArch
       linux /vmlinuz-linux
       initrd /intel-ucode.img
       initrd /initramfs-linux.img
       options root="LABEL=arch" rw
-
+  ```
 # Reboot
   ```
   # exit
