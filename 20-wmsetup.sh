@@ -56,6 +56,8 @@ feh
 polybar
 network-manager-applet
 nerd-fonts-source-code-pro
+ttf-dejavu 
+ttf-liberation
 volumeicon
 picom
 polkit-gnome
