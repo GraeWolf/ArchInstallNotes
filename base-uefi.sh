@@ -16,7 +16,7 @@ echo root:$rpassvar | chpasswd
 # You can add xorg to the installation packages, I usually add it at the DE or WM install script
 # You can remove the tlp package if you are installing on a desktop or vm
 
-pacman -S --noconfirm efibootmgr dialog iwd mtools dosfstools reflector base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils cups alsa-utils bash-completion openssh rsync bridge-utils dnsmasq openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns os-prober ntfs-3g terminus-font
+pacman -S --noconfirm efibootmgr dialog iwd mtools dosfstools reflector base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils cups alsa-utils bash-completion openssh rsync bridge-utils dnsmasq openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns os-prober ntfs-3g udiskie terminus-font
 
 pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 
