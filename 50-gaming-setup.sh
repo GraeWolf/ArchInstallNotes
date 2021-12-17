@@ -41,6 +41,8 @@ echo "Installation of the core software"
 
 list=(
 wine-staging
+wine-gecko 
+wine-mono
 giflib 
 lib32-giflib 
 libpng 
