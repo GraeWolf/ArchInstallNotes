@@ -75,9 +75,13 @@ Create mount point and mount efi partition
   ```
   
   Then run command:
+  
     ```
+    
     # bootctl install
+  
     # cd /boot/loader/
+    
     ```
   Edit loader.conf
     timeout 5
