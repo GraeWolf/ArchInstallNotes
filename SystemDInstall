@@ -1,0 +1,43 @@
+Format the root partition with a label for use with the systemd boot.
+	mkfs.ext4 /dev/sdx -L labelnamehere
+
+The efi partition will need to be mounted to /boot
+
+Will need to add the video driver to /etc/mkinitcpio.conf
+	MODULES=(nvidia)
+
+then run command
+	# mkinitcpio -p linux
+
+then run command
+	# bootctl install
+
+then cd into /boot/loader/
+	edit loader.conf
+		timeout 5
+		console-mode max
+		default arch.conf
+
+then cd into /boot/loader/entries
+	create arch.conf file
+		title	bootTitleGoesHere
+		linux	/vmlinuz-linux
+		initrd	/intel-ucode.img
+		initrd	/initramfs-linux.img
+		options	root="LABEL=arch" rw
+
+Make sure to enable iwd
+	systemctl enable iwd
+	
+	vim /etc/systemd/network/25-wireless.network
+		[Match]
+		Name=wlan0
+
+		[Network]
+		DHCP=yes
+
+	Then activate systemd-networkd
+		systemctl enable systemd-networkd
+		systemctl enable systemd-resolved
+
+
