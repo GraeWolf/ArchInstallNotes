@@ -70,8 +70,10 @@ Create mount point and mount efi partition
     MODULES=(nvidia)
 
   Then run command:
-    `# mkinitcpio -p linux`
-
+  ```
+    # mkinitcpio -p linux
+  ```
+  
   Then run command:
     ```
     # bootctl install
