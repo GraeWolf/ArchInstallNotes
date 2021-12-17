@@ -83,9 +83,9 @@ Create mount point and mount efi partition
     timeout 5
     console-mode max
     default arch.conf
-  
-    `#cd /boot/loader/entries`
-
+  ```
+    #cd /boot/loader/entries
+  ```
   Create arch.conf file
    ```
    # nano arch.conf
