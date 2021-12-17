@@ -25,19 +25,3 @@ then cd into /boot/loader/entries
 		initrd	/intel-ucode.img
 		initrd	/initramfs-linux.img
 		options	root="LABEL=arch" rw
-
-Make sure to enable iwd
-	systemctl enable iwd
-	
-	vim /etc/systemd/network/25-wireless.network
-		[Match]
-		Name=wlan0
-
-		[Network]
-		DHCP=yes
-
-	Then activate systemd-networkd
-		systemctl enable systemd-networkd
-		systemctl enable systemd-resolved
-
-
