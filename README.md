@@ -1,5 +1,8 @@
 # Arch Install Notes
 
+This is a kind of a install cheat sheet for me to install an Arch system.  The scripts are borrowed from EF Linux and Arco Linux.  These work for me and my work flow, I sometimes try to update them or make them better, but the edits are few and far between.  Anyone is happey to use them if they find them useful, but I am not a guru so use them at your own risk.
+
+
 ## Connect to the Internet
 
   `# pacman -S iwd`
