@@ -8,6 +8,7 @@ This is a kind of a install cheat sheet for me to install an Arch system.  The s
   `# pacman -S iwd`
 
   `# iwctl --passphrase sfPass station wlan0 connect Starfleet`
+  
   `# dhcpcd`
 
 ## Update the system clock
