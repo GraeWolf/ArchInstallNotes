@@ -49,9 +49,11 @@ create_pass root
 
 reflector -f 10 --country 'United States' --protocol https --sort rate --save /etc/pacman.d/mirrorlist 
 
-pacman -S --noconfirm efibootmgr dialog iwd mtools dosfstools reflector base-devel linux-headers xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils bash-completion openssh rsync flatpak os-prober ntfs-3g udiskie terminus-font networkmanager
+pacman -S --noconfirm grub efibootmgr dialog iwd mtools dosfstools reflector base-devel linux-headers xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils bash-completion openssh rsync flatpak os-prober ntfs-3g udiskie terminus-font networkmanager
 
 pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
+
+sed -i '63s/.//' /etc/default/grub
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ARCH --removable
 grub-mkconfig -o /boot/grub/grub.cfg
