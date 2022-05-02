@@ -20,7 +20,7 @@ create_pass () {
             
         elif [ $passvar1 == $passvar2 ]
         then
-            echo $1:$rpassvar | chpasswd
+            echo $1:$rpassvar1 | chpasswd
             break
         
         else
