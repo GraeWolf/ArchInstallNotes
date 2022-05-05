@@ -41,14 +41,18 @@ echo "Installation of the development packages"
 
 list=(
 firefox
-atom
+vivaldi
+vivaldi-ffmpeg-codecs
 flameshot
-meld
-thunderbird
-telegram-desktop
-discord
+geary
 simplescreenrecorder
 scrot
+bitwarden
+neofetch
+audacity
+brasero
+cups
+system-config-printer
 )
 
 count=0

@@ -1,5 +1,3 @@
-sudo pacman -S xorg xorg-xinit firefox polkit-gnome lxappearance thunar thunar-archive-plugin
-
 #!/bin/bash
 #set -e
 ###############################################################################
@@ -7,6 +5,11 @@ sudo pacman -S xorg xorg-xinit firefox polkit-gnome lxappearance thunar thunar-a
 ###############################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
+#
+#   This script is a work in progress.  The goal of which to get a fresh Arch
+#   install setup with the xorg window server so that any WM or DE can be 
+#   installed. The package choice is fory my persoal taste. You will need to 
+#   edit the package choices for your prefences.
 #
 ###############################################################################
 
@@ -53,13 +56,11 @@ sxhkd
 dmenu
 dunst
 feh
-polybar
 network-manager-applet
-nerd-fonts-source-code-pro
 ttf-dejavu 
 ttf-liberation
-volumeicon
 picom
+polkit
 polkit-gnome
 rofi
 imagemagick
@@ -79,6 +80,11 @@ gst-plugins-base
 gst-plugins-ugly
 playerctl
 volumeicon
+lightdm
+lightdm-slick-greeter
+udisks2
+kitty
+exa
 )
 
 count=0
@@ -88,6 +94,24 @@ for name in "${list[@]}" ; do
 	tput setaf 3;echo "Installing package nr.  "$count " " $name;tput sgr0;
 	func_install $name
 done
+
+# Choice to install Nvidia drivers
+while [ true ]
+do
+    echo "Do you need the Nvidia propretary drivers installed?"
+    read -p 'Please type yes or no: ' nvidavar
+
+    if [ $nvidiavar == 'yes' ]; then
+        sudo pacman -S --noconfirm --needed nvidia nvidia-utils nvidia-settings
+        break
+    elif [ $nvidiavar == 'no' ]; then
+        break
+    else
+        echo "You must type yes or no"
+    fi
+done
+
+sudo systemctl enable lightdm.service
 
 ###############################################################################
 

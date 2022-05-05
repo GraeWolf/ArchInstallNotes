@@ -6,6 +6,8 @@
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
+#   This script is designed to get Steam and Lutris installed.
+#
 ###############################################################################
 
 
@@ -101,6 +103,6 @@ done
 ###############################################################################
 
 tput setaf 7;echo "################################################################"
-echo "You now have a very minimal functional desktop"
+echo "You are now ready to start gaming."
 echo "################################################################"
 echo;tput sgr0
