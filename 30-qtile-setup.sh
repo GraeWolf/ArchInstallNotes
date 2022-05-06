@@ -6,6 +6,7 @@
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
+#
 ###############################################################################
 
 
@@ -56,7 +57,6 @@ for name in "${list[@]}" ; do
 	func_install $name
 done
 
-###############################################################################
 
 tput setaf 7;echo "################################################################"
 echo "You now have a very minimal functional desktop"

@@ -79,8 +79,7 @@ gst-plugins-base
 gst-plugins-ugly
 playerctl
 volumeicon
-lightdm
-lightdm-slick-greeter
+sddm
 udisks2
 kitty
 exa
@@ -98,19 +97,19 @@ done
 while [ true ]
 do
     echo "Do you need the Nvidia propretary drivers installed?"
-    read -p 'Please type yes or no: ' nvidavar
+    read -p 'Please type yes or no: ' nvidiavar
 
     if [ $nvidiavar == 'yes' ]; then
         sudo pacman -S --noconfirm --needed nvidia nvidia-utils nvidia-settings
         break
     elif [ $nvidiavar == 'no' ]; then
-        break
+        continue
     else
         echo "You must type yes or no"
     fi
 done
 
-sudo systemctl enable lightdm.service
+sudo systemctl enable sddm.service
 
 ###############################################################################
 
