@@ -45,10 +45,10 @@ vivaldi
 vivaldi-ffmpeg-codecs
 flameshot
 geary
+thunderbird
 simplescreenrecorder
 scrot
 bitwarden
-neofetch
 audacity
 brasero
 cups
