@@ -59,51 +59,12 @@ Create mount point and mount efi partition
     # git clone https://github.com/GraeWolf/ArchInstallNotes.git
 
     # cd ArchInstallNotes
-    # chmod +x base-efi.sh
-    # ./base-efi.sh
+    # chmod +x *.sh
+	# nvim /etc/pacman.conf
+		uncomment multilib section
+	# pacman -Syu
+    # ./10-base-efi.sh
 
-
-  ### Misc
-    # nano /etc/pacman.conf
-    uncomment multilib section
-    # pacman -Syu
-    
-  ### Systemd boot
-
-  Will need to add the video driver to /etc/mkinitcpio.conf
-    MODULES=(nvidia)
-
-  Then run command:
-  ```
-    # mkinitcpio -p linux
-  ```
-  
-  Then run command:
-  
-    
-    
-    # bootctl install
-  
-    # cd /boot/loader/
-    
-    
-  Edit loader.conf
-    timeout 5
-    console-mode max
-    default arch.conf
-  ```
-    #cd /boot/loader/entries
-  ```
-  Create arch.conf file
-   ```
-   # nano arch.conf
-
-      title GraeArch
-      linux /vmlinuz-linux
-      initrd /intel-ucode.img
-      initrd /initramfs-linux.img
-      options root="LABEL=arch" rw
-  ```
 # Reboot
   ```
   # exit
@@ -112,11 +73,12 @@ Create mount point and mount efi partition
   ```
 
 # Setup New System
-  run setup.sh
-  ```
-  $ git clone https://aur.archlinux.org/yay.git
-  $ cd yay
-  $ makepkg -si
-  $ sudo systemctl enable lightdm.service
-  $ mkdir -p ~/.config/openbox
-  $ cp -a /etc/xdg/openbox/. ~/.config/openbox/
+Once rebooted and in the new system and logged in as normal user. You will then need to clone the ArchInstallNotes into the use directory.
+
+```
+$ git clone https://github.com/GraeWolf/ArchInstallNotes.git
+$ cd ArchInstallNotes
+$ chmod +x *.sh
+```
+
+Now you can run the rest of the scripts if you so desire.  If you do run the rest of the scripts you will need to reboot once again for all changes made to take effect.
