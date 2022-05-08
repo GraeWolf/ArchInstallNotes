@@ -103,7 +103,7 @@ do
         sudo pacman -S --noconfirm --needed nvidia nvidia-utils nvidia-settings
         break
     elif [ $nvidiavar == 'no' ]; then
-        continue
+        break
     else
         echo "You must type yes or no"
     fi
