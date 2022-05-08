@@ -83,6 +83,7 @@ sddm
 udisks2
 kitty
 exa
+neofetch
 )
 
 count=0
